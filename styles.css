@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "timerFont";
+  src: url("timerFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #1b244a;
+  color: #eeeeee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.board {
+  width: min(920px, 92vw);
+  background: #1b244a;
+  border: 2px solid #9aabd8;
+  border-radius: 20px;
+  box-shadow: 0 16px 44px rgba(8, 0, 1, 0.45);
+  padding: 24px;
+}
+
+.board-header,
+.game-info,
+.teams {
+  display: flex;
+  gap: 18px;
+}
+
+.board-header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.new-game-btn {
+  width: auto;
+  padding: 0 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  background: #f94f6d;
+  color: #080001;
+  border: 2px solid #f94f6d;
+}
+
+.game-info {
+  margin-bottom: 18px;
+}
+
+.teams {
+  align-items: stretch;
+}
+
+.info-card,
+.team-card {
+  flex: 1;
+  background: #1b244a;
+  border: 2px solid #9aabd8;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+.timer-card {
+  flex: 1.4;
+}
+
+h2,
+h3 {
+  margin: 0 0 10px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 34px;
+}
+
+#period-value,
+#timer-value {
+  margin: 0 0 10px;
+  font-family: "timerFont", sans-serif;
+  color: #f94f6d;
+  font-size: 44px;
+}
+
+.score {
+  margin: 0 auto 14px;
+  width: min(100%, 230px);
+  height: 124px;
+  display: grid;
+  place-items: center;
+  background: #020617;
+  border: 2px solid #9aabd8;
+  border-radius: 10px;
+  color: #f94f6d;
+  font-family: "timerFont", sans-serif;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 126.666px;
+  text-align: center;
+}
+
+.control-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 64px;
+  height: 45px;
+  border: 2px solid #9aabd8;
+  border-radius: 8px;
+  background: transparent;
+  color: #9aabd8;
+  font-family: "timerFont", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+button:hover {
+  border-color: #f94f6d;
+  color: #f94f6d;
+  background: rgba(249, 79, 109, 0.08);
+  transform: translateY(-1px);
+}
+
+.foul-text {
+  margin: 0 0 10px;
+}
+
+.team-card.leader {
+  border-color: #f94f6d;
+  box-shadow: inset 0 0 0 1px #f94f6d;
+}
+
+.leader-note {
+  text-align: center;
+  margin: 8px 0 0;
+  color: #9aabd8;
+}
+
+@media (max-width: 760px) {
+  .board-header,
+  .game-info,
+  .teams {
+    flex-direction: column;
+  }
+
+  .new-game-btn {
+    width: 100%;
+  }
+}

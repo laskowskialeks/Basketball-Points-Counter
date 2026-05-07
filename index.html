@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Basketball Points Counter</title>
+  </head>
+  <body>
+    <main class="board">
+      <header class="board-header">
+        <h1>Game Night Scoreboard</h1>
+        <button class="new-game-btn" onclick="newGame()">New Game</button>
+      </header>
+
+      <section class="game-info">
+        <div class="info-card">
+          <h2>PERIOD</h2>
+          <p id="period-value">1</p>
+          <div class="control-row">
+            <button onclick="changePeriod(-1)">-</button>
+            <button onclick="changePeriod(1)">+</button>
+          </div>
+        </div>
+
+        <div class="info-card timer-card">
+          <h2>TIMER</h2>
+          <p id="timer-value">10:00</p>
+          <div class="control-row">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="teams">
+        <article class="team-card" id="home-card">
+          <h3>HOME</h3>
+          <p class="score" id="home-score">0</p>
+          <p class="foul-text">Fouls: <span id="home-fouls">0</span></p>
+          <div class="control-row">
+            <button onclick="addPoints('home', 1)">+1</button>
+            <button onclick="addPoints('home', 2)">+2</button>
+            <button onclick="addPoints('home', 3)">+3</button>
+          </div>
+          <div class="control-row">
+            <button onclick="changeFouls('home', 1)">Foul +</button>
+            <button onclick="changeFouls('home', -1)">Foul -</button>
+          </div>
+        </article>
+
+        <article class="team-card" id="guest-card">
+          <h3>GUEST</h3>
+          <p class="score" id="guest-score">0</p>
+          <p class="foul-text">Fouls: <span id="guest-fouls">0</span></p>
+          <div class="control-row">
+            <button onclick="addPoints('guest', 1)">+1</button>
+            <button onclick="addPoints('guest', 2)">+2</button>
+            <button onclick="addPoints('guest', 3)">+3</button>
+          </div>
+          <div class="control-row">
+            <button onclick="changeFouls('guest', 1)">Foul +</button>
+            <button onclick="changeFouls('guest', -1)">Foul -</button>
+          </div>
+        </article>
+      </section>
+
+      <p class="leader-note" id="leader-note">Leader: Tie game</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
